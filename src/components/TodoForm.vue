@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
   export default {
     data () {
       return {
@@ -17,8 +19,12 @@
       }
     },
     methods: {
+      ...mapMutations([
+        'setTask'
+      ]),
       onSubmit () {
-        //
+        this.setTask(this.task)
+        this.task = null
       }
     }
   }
