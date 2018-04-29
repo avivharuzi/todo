@@ -20,10 +20,13 @@
     },
     methods: {
       ...mapMutations([
-        'setTask'
+        'setTodo'
       ]),
       onSubmit () {
-        this.setTask(this.task)
+        if (!this.task) {
+          return;
+        }
+        this.setTodo(this.task)
         this.task = null
       }
     }

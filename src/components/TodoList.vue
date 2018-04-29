@@ -1,7 +1,10 @@
 <template>
-  <ul v-if="tasks && tasks.length" class="list-group">
-    <li v-for="(task, i) in tasks" :key="i" class="list-group-item">{{ task }}
-    <span class="float-right"><button @click="deleteTask(task)" class="btn btn-danger"><i class="fa fa-trash"></i></button></span>
+  <ul v-if="todos && todos.length" class="list-group">
+    <li v-for="(todo, i) in todos" :key="i" class="list-group-item" :class="{ 'bg-secondary text-white': todo.complete }">{{ todo.task }}
+    <span class="float-right">
+      <button class="btn btn-info" @click="toggleComplete(todo)"><i class="fa fa-check"></i></button>
+      <button @click="deleteTodo(todo)" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+    </span>
     </li>
   </ul>
 </template>
@@ -13,12 +16,13 @@
   export default {
     computed: {
       ...mapGetters([
-        'tasks'
+        'todos'
       ])
     },
     methods: {
       ...mapMutations([
-        'deleteTask'
+        'deleteTodo',
+        'toggleComplete'
       ])
     }
   }

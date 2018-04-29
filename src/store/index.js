@@ -5,17 +5,24 @@ Vue.use(Vuex)
 
 export const store = new Vuex.Store({
   state: {
-    tasks: []
+    todos: []
   },
   getters: {
-    tasks: (state) => state.tasks
+    todos: (state) => state.todos
   },
   mutations: {
-    setTask: (state, payload) => {
-      state.tasks.push(payload)
+    setTodo: (state, payload) => {
+      state.todos.push({
+        task: payload,
+        complete: false
+      })
     },
-    deleteTask: (state, payload) => {
-      state.tasks.splice(state.tasks.indexOf(payload), 1)
+    deleteTodo: (state, payload) => {
+      state.todos.splice(state.todos.indexOf(payload), 1)
+    },
+    toggleComplete: (state, payload) => {
+      const i = state.todos.indexOf(payload)
+      state.todos[i].complete = !state.todos[i].complete
     }
   }
 })

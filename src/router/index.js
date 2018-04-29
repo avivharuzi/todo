@@ -12,10 +12,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Home,
-      meta: {
-        title: 'Home'
-      }
+      component: Home
     }
   ]
 })

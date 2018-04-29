@@ -3,10 +3,3 @@
     <h2>TODO LIST</h2>
   </header>
 </template>
-
-<style>
-  h2 {
-    font-family: "tenez";
-  }
-</style>
-

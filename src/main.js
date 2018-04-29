@@ -9,11 +9,6 @@ import { store } from '@/store/index'
 // Styles
 import '@/scss/main.scss'
 
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title
-  next()
-})
-
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
