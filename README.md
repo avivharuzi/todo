@@ -1,2 +1,2 @@
-# vue-starter
-vue starter files project
+# todo
+todo list simple app with vue.js
