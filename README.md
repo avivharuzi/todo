@@ -1,2 +1,3 @@
-# todo
-todo list simple app with vue.js
+# Todo
+
+TODO List simple app using Vue.js.
